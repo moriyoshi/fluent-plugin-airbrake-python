@@ -190,5 +190,6 @@ class Fluent::AirbrakePythonOutput < Fluent::Output
       notice = build_notice(tag, time, record)
       @sender.send_to_airbrake(notice) if notice
     end
+    chain.next
   end
 end
