@@ -109,11 +109,7 @@ class Fluent::AirbrakePythonOutput < Fluent::Output
   end
 
   def notification_needed(tag, time, record)
-    if record['sys_levelno']
-      record['sys_levelno'] >= @loglevel
-    else
-      nil
-    end
+    record['sys_levelno'] ? record['sys_levelno'] >= @loglevel: false
   end
 
   def build_component_name_py(record)
