@@ -58,7 +58,7 @@ class Fluent::AirbrakePythonOutput < Fluent::Output
   config_param :http_open_timeout, :integer, :default => nil
   config_param :http_read_timeout, :integer, :default => nil
   config_param :project_id, :string, :default => nil
-  config_param :api_key, :string
+  config_param :api_key, :string, :secret => true
   config_param :message_regexp, :string, :default => '.*'
   config_param :message_template, :string, :default => '\\0'
   config_param :loglevel, :string, :default => 'DEBUG'
